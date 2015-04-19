@@ -1,3 +1,6 @@
 [submodule "vagrant"]
 	path = vagrant
 	url = https://github.com/ninetails/starter-vagrant.git
+[submodule "html"]
+	path = html
+	url = https://github.com/wordpress/wordpress.git

@@ -1,0 +1,24 @@
+---
+default:
+  vm:
+    box:      "utopic32"
+    box_url:  "https://cloud-images.ubuntu.com/vagrant/utopic/current/utopic-server-cloudimg-i386-vagrant-disk1.box"
+    hostname: "wordpress.dev"
+    private_network:
+      ip: "192.168.2.2"
+    forwarded_port:
+      - guest: 3306
+        host:  33066
+    synced_folder:
+      - id:    "vagrant-root"
+        host:  ".."
+        guest: "/vagrant"
+    puppet:
+      - module_path: "puppet/modules"
+        manifests_path: "puppet/manifests"
+        manifest_file: "init.pp"
+        options:
+          - "--verbose"
+          - "--debug"
+        facter:
+          env: "dev"

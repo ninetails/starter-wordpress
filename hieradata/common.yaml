@@ -2,8 +2,20 @@
 apache_docroot: "/vagrant/html"
 apache_vhosts:
   wordpress:
-    name:     'wordpress.dev'
-    docroot:  '/vagrant/html'
-    override: 'All'
+    default_vhost: true
+    vhost_name:    '*'
+    name:          'wordpress.dev'
+    port:          '80'
+    docroot:       '/vagrant/html'
+    override:      'All'
     serveraliases:
       - 'www.wordpress.dev'
+mysql_db:
+  wordpress:
+    user: wp_dev
+    password: '123456'
+    host: 'localhost'
+    grant: ['all']
+    charset: 'utf8'
+    sql: '/vagrant/wordpress.sql'
+    import_timeout: 900

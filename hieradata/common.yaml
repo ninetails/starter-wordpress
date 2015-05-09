@@ -10,6 +10,8 @@ apache_vhosts:
     override:      'All'
     serveraliases:
       - 'www.wordpress.dev'
+      - 'ratierink.dev'
+      - 'renatoratier.dev'
 mysql_db:
   wordpress:
     user: wp_dev
